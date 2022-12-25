@@ -1,0 +1,29 @@
+pipeline{
+     agent {label "slave-agent1"}
+        stages {
+                stage('welcome') { 
+                                steps { 
+                                    sh '''
+                                           pwd
+                                           sleep 5
+                                           echo "welcome"
+                                    '''
+                                        }
+                                }
+         
+                stage('create directory') {
+                                steps {
+                                    sh '''
+                                            mkdir $PWD/test_pipeline
+                                       '''
+                                    }
+                                            }
+                stage('create file') {
+                                steps {
+                                    sh '''
+                                            touch jenkinsfile
+                                       '''
+                                }
+                }
+                }
+}
