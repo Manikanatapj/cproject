@@ -1,0 +1,3 @@
+ find . -mtime +10 | xargs ls –l
+ cp --backup <filename> <destinationDirectory>
+ cp *.<extension> <destinationDirectory>  
